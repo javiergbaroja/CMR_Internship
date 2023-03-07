@@ -3,6 +3,7 @@ import os
 import numpy as np
 
 
+
 def backslash2slash(path:str) -> str:
     return re.sub(r'\\',r'/',path)
 
@@ -24,14 +25,14 @@ def retrieve_patient_info(patient_folder:str) -> dict:
             Slice_thickness (np.array)
             Epicardium (int)
             Endocardium|Lumen (int)
-            Myocardium - healthy patches (int)
-            Healthy patch 1 (int)
-            Healthy patch 2 (int)
+            Myocardium-healthy_patches (int)
+            Healthy_patch_1 (int)
+            Healthy_patch_2 (int)
             Empty (int)
             Myocardium (int)
-            Scar SD2 (int)
-            Scar SD5 (int)
-            Scar FWHM (int)
+            Scar_SD2 (int)
+            Scar_SD5 (int)
+            Scar_FWHM (int)
     """
     
     # Load data
@@ -45,14 +46,14 @@ def retrieve_patient_info(patient_folder:str) -> dict:
     label_names = [
         "Epicardium", 
         "Endocardium|Lumen",
-        "Myocardium - healthy patches",
-        "Healthy patch 1",
-        "Healthy patch 2",
+        "Myocardium-healthy_patches",
+        "Healthy_patch 1",
+        "Healthy_patch 2",
         "Empty",
         "Myocardium",
-        "Scar SD2",
-        "Scar SD5",
-        "Scar FWHM"]
+        "Scar_SD2",
+        "Scar_SD5",
+        "Scar_FWHM"]
     
     # Fill in dictionary 
     count_dict["n_voxels"] = len(labels[...,0].flatten())
